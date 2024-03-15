@@ -13,8 +13,7 @@ onBeforeMount(() => {
   LicenseManager.setLicenseKey(import.meta.env.AG_GRID_LICENSE_KEY)
 })
 
-const startRow = ref(0)
-const endRow = ref(1000)
+
 let total = ref(0)
 const gridApi = ref()
 
@@ -29,13 +28,12 @@ function createServerSideDatasource() {
     getRows: async (params) => {
       gridApi.value.hideOverlay()
 
-      startRow.value = params.request.startRow
-      endRow.value = params.request.endRow
+      let startRow = params.request.startRow
+      let endRow = params.request.endRow
 
-      fetchData(startRow.value, endRow.value)
+      fetchData(startRow, endRow)
         .then((data) => {
-          console.log('Fetch', startRow.value, endRow.value)
-          params.success({ rowData: data, rowCount: total })
+           params.success({ rowData: data, rowCount: total })
         })
         .catch(() => {
           params.fail()
