@@ -11,6 +11,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "ag-grid-community": "^31.1.1",
+    "ag-grid-enterprise": "^31.1.1",
     "ag-grid-vue3": "^31.1.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
