@@ -11,7 +11,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-     "vue": "^3.4.21",
+    "ag-grid-vue3": "^31.1.1",
+    "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
